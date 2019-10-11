@@ -1,6 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Character from "./Character.js"
+import Character from './Character.js'
+import styled from 'styled-components'
+
+
+const Card = styled.div `
+   width: 100%;
+   height: 100%;
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap;
+`
 
 
 
@@ -24,13 +34,13 @@ useEffect(() => {
 console.log(characters)
 
 return(
-    <div className = "container">
+    <Card>
      { characters.map(person => {
        return (
         <Character name = {person.name} gender = {person.gender} hair = {person.hair_color} height = {person.height}
         />
      );
      })}
-    </div>
+    </Card>
 )
 }
